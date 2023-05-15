@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { styled } from "styled-components";
+import "./App.css";
+import { Counter } from "./Components/Counter/Counter";
+import { Timer } from "./Components/Timer/Timer";
+import { Input } from "./Components/Valid/Input";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Counter />
+      <Container>
+        <h1>Form</h1>
+        <Input type="email" />
+        <Input type="password" />
+      </Container>
+      <Timer />
+    </>
   );
 }
 
 export default App;
+const Container = styled.div`
+  background-color: #af6afd;
+  margin: 0 auto;
+  width: 500px;
+  height: 300px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 70px;
+`;
